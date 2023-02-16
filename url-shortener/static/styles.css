@@ -1,0 +1,43 @@
+
+* {
+    font-family: 'Sora';
+}
+
+h1 {
+    color:rgb(63, 62, 62);
+}
+
+.flexbox-container {
+    display: flex;
+    border: 5px dotted white;
+    width: 72%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+
+.flexbox-upload {
+    display: flex;
+    border: 2px solid rgb(70, 70, 70);
+    margin: auto;
+    text-align: left;
+    padding: 1%;
+}
+
+.created {
+    display: flex;
+    border: 2px solid rgb(70, 70, 70);
+    margin: auto;
+    text-align: middle;
+    padding: 1%;
+    width: 48%;
+}
+
+.title {
+    border: 2px solid rgb(206, 206, 206);
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
