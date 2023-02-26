@@ -9,8 +9,7 @@
 </head>
 <body>
     {% block main %}
-    <h1>Your URL</h1>
-    <h2> {{ code }} </h2>
+    <h1 class="title"> Your URL : <a href="{{ url_for('redirect_to_url', code=url) }}"></h1>
     {% endblock %}
 </body>
 </html>

@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="title">
-        <h1>URL SHORTENER</h1>
-    </div>  
 
     {% for message in get_flashed_messages() %}
     <h2>{{ message }}</h2>
     {% endfor %}
 
 
-    {% block main %}
-    {% endblock %}
+    <main>
+        <section class="glass">
+            {% block main %}
+            {% endblock %}
+        </section>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </main>
 
 
 </body>

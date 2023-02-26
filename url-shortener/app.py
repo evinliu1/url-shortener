@@ -51,6 +51,15 @@ def redirect_to_url(code):
                     url_for('static', filename='user_files/' + urls[code]['file'])
     return abort(404)
 
+@app.route('/created_urls')
+def created_urls():
+    if os.path.exists('urls.json'):
+        with open('urls.json') as urls_file:
+            urls = json.load(urls_file)
+            
+    return render_template('created_urls.html', codes = session.keys())
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
@@ -58,3 +67,6 @@ def page_not_found(error):
 @app.route('/api')
 def session_api():
     return jsonify(list(session.keys()))
+
+if __name__ == "__main__":
+    app.run(debug=True)
