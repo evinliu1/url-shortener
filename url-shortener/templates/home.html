@@ -17,36 +17,44 @@
             <form action="your-url" method="post">
                 <div class="card-item">
                     <label for="url">Website URL : </label>
+                </div>
+                <div class="card-item">
                     <input type="url" name="url" value="" class="input" required>
                 </div>
                 <div class="card-item">
                     <label for="code">Short Name : </label>
+                </div>
+                <div class="card-item">
                     <input type="text" name="code" value="" class="input" required>
                 </div>
-                <input type="submit" value="shorten">
+                <input type="submit" value="shorten" class="submission">
             </form>
         </div>
         <div class="card">
             <form action="your-url" method="post" enctype="multipart/form-data">
                 <div class="card-item">
                     <label for="file">File</label>
+                </div>
+                <div class="card-item">
                     <div class="input">
                         <input type="file" name="file" value="" required>
                     </div>
                 </div>
                 <div class="card-item">
                     <label for="code">Short Name : </label>
+                </div>
+                <div class="card-item">
                     <input type="text" name="code" value="" class="input" required>
                 </div>
-                <input type="submit" value="shorten">
+                <input type="submit" value="shorten" class="submission">
             </form>
         </div>
     {% if codes %}
-    <button>
-        <a href="{{ url_for('created_urls',codes=codes) }}">
-            Codes you have created
-        </a>
-    </button>
+    <form action="{{ url_for('created_urls',codes=codes) }}">
+        <button type="submit">
+            Created Links
+        </button>
+    </form>
     {% endif %}
     </div>
 {% endblock %}
