@@ -7,25 +7,40 @@
 
 main {
     min-height: 100vh;
-    background: linear-gradient(to right top,#f0cc80,#84e2f0);
+    background: linear-gradient(to right top,#35322c,#84e2f0);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .glass {
-    background: white;
     min-height: 80vh;
     width: 60%;
     background: linear-gradient(
         to right bottom,
-        rgba(255,255,255,0.5),
-        rgba(214, 143, 223, 0.3)
+        rgba(255,255,255,0.2),
+        rgba(214, 143, 223, 0.01)
     );
     border-radius: 2rem;
     z-index: 2;
     backdrop-filter: blur(2rem);
     display: flex;
+    animation: animateY 0.9s infinite ease-in-out alternate;
+    -webkit-animation: animateY 0.9s infinite ease-in-out alternate;
+}
+
+@keyframes animateY {
+    100% {
+    transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    }
+}
+
+@keyframes animateX {
+    100% {
+    transform: translateX(4px);
+    -webkit-transform: translateX(4px);
+    }
 }
 
 .circle1,
@@ -44,11 +59,15 @@ main {
 .circle1{
     top: 5%;
     left: 10%;
+    animation: animateX 1.3s infinite ease-in-out alternate;
+    -webkit-animation: animateX 1.3s infinite ease-in-out alternate;
 }
 
 .circle2{
     bottom: 2%;
     right: 10%;
+    animation: animateY 0.9s infinite ease-in-out alternate;
+    -webkit-animation: animateY 0.9s infinite ease-in-out alternate;
 }
 
 h1,label {
@@ -71,18 +90,20 @@ h1,label {
     align-items: center;
     background: linear-gradient(
         to right bottom,
-        rgba(255,255,255,0.7),
+        rgba(255,255,255,0.3),
         rgba(214, 143, 223, 0.1)
     );
     border-radius: 2rem;
+    animation: animateX 1.3s infinite ease-in-out alternate;
+    -webkit-animation: animateX 1.3s infinite ease-in-out alternate;
 }
 
 .card {
     display: flex;
     background: linear-gradient(
         to right bottom,
-        rgba(255,255,255,0.7),
-        rgba(255,255,255,0.2)
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.05)
     );
     border-radius: 1rem;
     margin: 1rem 0rem;
@@ -116,31 +137,65 @@ button {
     );
     padding: 0.5rem;
     border-radius: 0.5rem;
-    color:rgb(146, 128, 251);
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+    color:rgb(63,62,62);
     border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+button:hover{
+    color:#fff;
+}
+
+button::before {
+    content : "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(
+        to right bottom,
+        rgba(31, 39, 33, 0.7),
+        rgba(161, 40, 177, 0.4)
+    );
+    z-index: -1;
+    transition: 0.8s;
+    top: 0;
+    border-radius: 0.5rem 0.5rem 50% 50%;
+
+}
+
+.bb {
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .submission {
     margin-top: 8px;
+    border-radius: 0.5rem;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 button:visited {
-    color:rgb(146, 128, 251);
+    color:rgb(63,62,62);
     text-decoration: none;
 }
 
-button:hover {
-    background: linear-gradient(
-        to right bottom,
-        rgba(255,255,255,0.3),
-        rgba(144, 169, 237, 0.8)
-    );
-    color: white;
+button:hover::before {
+    height: 130%;
 }
+
+
 
 a:link {
     color:rgb(146, 128, 251);
+    text-decoration: none;
 }
 
 a:visited {
