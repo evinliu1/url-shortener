@@ -10,13 +10,13 @@
 <body>
     {% block main %}
         <div class="title">
-            <h2>Codes you have created</h2>
+            <h1>CODES YOU HAVE CREATED</h1>
         </div>
         <div class="dashboard">
             <ul>
                 {% for code in codes %}
                     <a href="{{ url_for('redirect_to_url', code=code) }}">
-                    <div class="card">{{ code }}</div>
+                    <div class="card" class="b">{{ code }}</div>
                     </a>
                  {% endfor %}
             </ul>

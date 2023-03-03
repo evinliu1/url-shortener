@@ -20,6 +20,11 @@
 
     <main>
         <section class="glass">
+            <form action="{{ url_for('home') }}">
+                <button type="submit" class="b bb">
+                    Home
+                </button>
+            </form>
             {% block main %}
             {% endblock %}
         </section>
